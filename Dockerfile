@@ -1,6 +1,6 @@
-FROM alpine:3.21
+FROM alpine:3.23
 
-LABEL maintainer="Vincenzo Buttazzo <vincenzo@buttazzo.eu>"
+LABEL maintainer="Vincenzo Buttazzo <admin@kaisa.it>"
 
 RUN apk add --no-cache perl-dev alpine-sdk \
 	perl-app-cpanminus \
@@ -40,6 +40,6 @@ RUN apk add --no-cache perl-dev alpine-sdk \
     cpanm Dancer2 Starman && \
     apk del alpine-sdk perl-dev
 
-CMD plackup -p 3000 -s Starman /var/www/bin/app.psgi
+CMD plackup -p 3000 -s Starman /var/www/foobar/bin/app.psgi
 
 EXPOSE 3000
